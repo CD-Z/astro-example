@@ -1,0 +1,54 @@
+---
+import { Image } from "astro:assets";
+import "./Splide.css"
+
+interface Props {
+  images: Array<string>;
+ }
+
+const { images   } = Astro.props;
+---
+
+<section id="slider1" class="splide">
+  <div class="splide__track">
+    <ul class="splide__list">
+      {
+        images.map((val) => (
+          <li class="splide__slide">
+            <img style="height: 100%" src={val} />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<script>
+  import Splide from "@splidejs/splide";
+  import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
+
+  
+  const config = {
+    type: "loop",
+    drag: "free",
+    focus: "center",
+    arrows: false,
+    pagination: false,
+    direction: "ltr",
+    height: "22vh",
+    autoWidth: true,
+    gap: ".25rem",
+    lazyLoad: true,
+    live: false,
+    autoScroll: {
+      autoStart: true,
+      speed: 0.25,
+      pauseOnHover: false,
+    },
+  };
+  const splide = new Splide("#slider1", config);
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    splide.mount({AutoScroll});
+  });
+</script>

@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Splide from "../components/Splide.astro"
+const images = ["https://media.istockphoto.com/id/1040315976/de/foto/frau-betrachten-aus-einer-h%C3%B6hle-von-matera-basilikata-italien.jpg?s=612x612&w=0&k=20&c=NafWhKkod4mqUTsl1atEx7yxZAetKlBlRLd0qFjvbsQ=","https://media.istockphoto.com/id/1040906722/de/foto/frau-und-mann-blick-auf-den-malerischen-blick-auf-gordes-dorf-in-der-provence.jpg?s=612x612&w=0&k=20&c=p3MvpE0SPIOFHfTHX47pIIa7shjM2nSFyGjtcrg5-I0="]
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+	<a href="/a">Change Page</a>
+		<Splide images={images} />
+	</main>
+</Layout>
+
+
